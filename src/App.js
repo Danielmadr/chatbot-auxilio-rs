@@ -4,8 +4,7 @@ import "./styles.css";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import InputBox from "./components/InputBox/InputBox";
 
-const API_KEY = "AIzaSyAdHjAp2i-vne5AKymbrK8T2nsg54VjK2Y";
-//process.env.GEMINI_API_KEY; // Replace with your actual API key
+const API_KEY = process.env.GEMINI_API_KEY; // Replace with your actual API key
 
 function App() {
   const [ultimaMensagem, setUltimaMensagem] = useState({});
