@@ -2,7 +2,7 @@
 
 Este projeto é um chatbot desenvolvido em React que utiliza a API do Google Generative AI para responder a perguntas relacionadas a como ajudar as vítimas da tragédia no Rio Grande do Sul.
 
-![Gato dançando](/screenshots/home.gif)
+![GIF do projeto funcionando](/screenshots/home.gif)
 
 ## Funcionalidades
 
@@ -24,7 +24,7 @@ Para executar este projeto localmente, siga os passos abaixo:
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/chatbot-auxilio-rs.git
+git clone https://github.com/Danielmadr/chatbot-auxilio-rs
 ```
 
 2. Navegue até o diretório do projeto:
