@@ -2,34 +2,27 @@ import React, { useState, useEffect } from "react";
 import ChatInterface from "./components/ChatInterface/ChatInterface";
 import "./styles.css";
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import InputBox from "./components/InputBox/InputBox";
 
-const API_KEY = "AIzaSyAdHjAp2i-vne5AKymbrK8T2nsg54VjK2Y"; // Replace with your actual API key
+const API_KEY = "AIzaSyAdHjAp2i-vne5AKymbrK8T2nsg54VjK2Y";
+//process.env.GEMINI_API_KEY; // Replace with your actual API key
 
 function App() {
-  const [chatHistory, setChatHistory] = useState([
-    { role: "user", parts: [{ text: "Hello, I have 2 dogs in my house." }] },
-    {
-      role: "model",
-      parts: [{ text: "Great to meet you. What would you like to know?" }],
-    },
-  ]);
-
+  const [ultimaMensagem, setUltimaMensagem] = useState({});
   const [pergunta, setPergunta] = useState("");
-  const [isLoading, setIsLoading] = useState(false); // Loading state
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const genAI = new GoogleGenerativeAI(API_KEY);
     const model = genAI.getGenerativeModel({
-      model: "gemini-pro",
+      model: "gemini-1.0-pro",
       generationConfig: {
         candidateCount: 1,
         temperature: 0.5,
       },
     });
 
-    const chat = model.startChat({
-      history: chatHistory,
-    });
+    const chat = model.startChat();
 
     const sendMessage = async () => {
       if (pergunta) {
@@ -39,11 +32,10 @@ function App() {
           const result = await chat.sendMessage(pergunta);
           const response = await result.response;
           const text = response.text();
-          setChatHistory([
-            ...chatHistory,
-            { role: "user", parts: [{ text: pergunta }] },
-            { role: "model", parts: [{ text: text }] },
-          ]);
+          setUltimaMensagem({
+            pergunta: { role: "user", parts: [{ text: pergunta }] },
+            resposta: { role: "model", parts: [{ text: text }] },
+          });
           setPergunta("");
         } catch (error) {
           console.error(error);
@@ -54,7 +46,7 @@ function App() {
     };
 
     sendMessage();
-  }, [chatHistory, pergunta]);
+  }, [pergunta]);
 
   const handlePerguntaChange = (novaPergunta) => {
     setPergunta(novaPergunta);
@@ -62,11 +54,14 @@ function App() {
 
   return (
     <div className="chat-container">
-      <ChatInterface
-        chatHistory={chatHistory} // Pass chat history to
-        onPerguntaChange={handlePerguntaChange}
-        isLoading={isLoading} // Pass loading state
-      />
+      <div className="chat-content">
+        <h1>Chatbot de Auxílio ao RS</h1>
+        <h3 className="title">Como Apoiar as Vítimas das Enchentes</h3>
+        <ChatInterface ultimaMensagem={ultimaMensagem} isLoading={isLoading} />
+      </div>
+      <div className="chat-input">
+        <InputBox onPerguntaChange={handlePerguntaChange} />
+      </div>
     </div>
   );
 }

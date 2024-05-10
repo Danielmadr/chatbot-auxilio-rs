@@ -21,6 +21,7 @@ function InputBox({ onPerguntaChange }) {
         value={novaPergunta}
         onChange={handleInputChange}
         placeholder="Digite sua pergunta..."
+        style={{ fontSize: "18px" }}
       />
       <button type="submit">Enviar</button>
     </form>
