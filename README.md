@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Chatbot de Auxílio ao RS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto é um chatbot desenvolvido em React que utiliza a API do Google Generative AI para responder a perguntas relacionadas a como ajudar as vítimas da tragédia no Rio Grande do Sul.
 
-## Available Scripts
+## Funcionalidades
 
-In the project directory, you can run:
+- Interface de chat interativa.
+- Respostas geradas pelo modelo de IA `gemini-1.0-pro` do Google Generative AI.
+- Suporte para perguntas e respostas em tempo real.
+- Carregamento assíncrono de mensagens.
 
-### `npm start`
+## Tecnologias Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React
+- Google Generative AI
+- CSS para estilização
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Instalação
 
-### `npm test`
+Para executar este projeto localmente, siga os passos abaixo:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone o repositório:
 
-### `npm run build`
+```bash
+git clone https://github.com/seu-usuario/chatbot-auxilio-rs.git
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Navegue até o diretório do projeto:
+   
+```bash
+cd chatbot-auxilio-rs
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Instale as dependências:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm install
+```
 
-### `npm run eject`
+4. Adicione sua chave da API no arquivo `App.jsx`:
+```jsx
+const API_KEY = "sua_chave_da_api_aqui";
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+5. Inicie o servidor de desenvolvimento:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+##Segurança
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Este projeto é um protótipo e realiza acesso direto à API via frontend, o que não é seguro devido à exposição da chave da API. Para um ambiente de produção, é recomendado o desenvolvimento de uma API REST que faça o acesso à API do Google Generative AI e retorne a resposta, mantendo a chave da API protegida no backend.
 
-## Learn More
+## Uso
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Após iniciar o aplicativo, você pode interagir com o chatbot digitando perguntas na caixa de entrada e enviando-as. O chatbot responderá com informações sobre como ajudar as vítimas das enchentes no Rio Grande do Sul.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Contribuições
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Contribuições são sempre bem-vindas!
 
-### Analyzing the Bundle Size
+## Licença
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE.md para detalhes.
 
-### Making a Progressive Web App
+## Contato
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Se você tiver alguma dúvida ou sugestão, não hesite em entrar em contato.
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Desenvolvido por Daniel Martins de Andrade
