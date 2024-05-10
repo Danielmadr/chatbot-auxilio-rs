@@ -2,6 +2,8 @@
 
 Este projeto é um chatbot desenvolvido em React que utiliza a API do Google Generative AI para responder a perguntas relacionadas a como ajudar as vítimas da tragédia no Rio Grande do Sul.
 
+![Gato dançando](/screenshots/home.gif)
+
 ## Funcionalidades
 
 - Interface de chat interativa.
